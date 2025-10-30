@@ -42,12 +42,12 @@
 							class="w-full cursor-pointer text-start h-11 px-4 py-2 rounded-md transition hover:text-[#6841a8] hover:bg-[#231d2e]"><i
 								class="fa-solid fa-palette"></i> Ranglar</button>
 					</a>
-					<a href="">
+					<a href="#timer">
 						<button
 							class="w-full cursor-pointer text-start h-11 px-4 py-2 rounded-md transition hover:text-[#6841a8] hover:bg-[#231d2e]"><i
 								class="fa-solid fa-stopwatch-20"></i> Sekundomer</button>
 					</a>
-					<a href="">
+					<a href="#database">
 						<button
 							class="w-full cursor-pointer text-start h-11 px-4 py-2 rounded-md transition hover:text-[#6841a8] hover:bg-[#231d2e]"><i
 								class="fa-solid fa-database"></i> Ma'lumotlar</button>
@@ -177,6 +177,37 @@
 				</div>
 			</section>
 			<!-- Color Starts -->
+			<!-- Timer Starts -->
+			<section id="timer"
+				class=" min-h-screen flex items-center justify-center py-10 px-4 md:py-20 md:px-6 bg-[#0f0f11]">
+				<div>
+					<h2
+						class="text-3xl md:text-5xl font-bold bg-gradient-to-r from-purple-500 to-blue-500 text-transparent bg-clip-text text-center mb-6 md:mb-10">
+						Sekundomer</h2>
+					<div class="rounded-lg shadow-sm max-w-lg mx-auto p-8  bg-[#131317]">
+						<div class="text-center space-y-8">
+							<div class="p-8 bg-muted/30 rounded-2xl bg-[#19191d] ">
+								<div class="text-7xl md:text-8xl font-mono font-bold  text-[#7d59e3]">
+									00 : 00
+								</div>
+							</div>
+							<div class="flex items-center justify-center gap-2">
+								<button
+									class="inline-flex items-center justify-center gap-2  rounded-md px-8 h-16 w-32 text-lg font-semibold bg-gradient-to-r from-purple-600 to-blue-500"><i
+										class="fa-solid fa-play"></i> Boshlash</button>
+								<button
+									class="inline-flex items-center justify-center gap-2  rounded-md px-2 h-16 w-auto text-lg font-semibold bg-black"><i
+										class="fa-solid fa-rotate-left"></i> Qayta Boshlash</button>
+							</div>
+							<p class="text-sm text-[#a1a1aa]">Sekundomer to'xtatilgan</p>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- Timer Ends -->
+			<!-- Database Starts -->
+			<section id="database"></section>
+			<!-- Database Ends -->
 		</main>
 	</div>
 	<script src="js/script.js"></script>
