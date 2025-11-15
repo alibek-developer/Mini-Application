@@ -7,6 +7,7 @@
 	<!-- Tailwind link -->
 	<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 
+	<!-- Font Awesome links -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
 		integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
 	<script src="https://cdn.tailwindcss.com"></script>
@@ -50,10 +51,9 @@
 							class="w-full cursor-pointer text-start h-11 px-4 py-2 rounded-md transition hover:bg-[#231d2e] hover:text-[#6841a8]"><i
 								class="fa-solid fa-list-check"></i> Vazifalar</button>
 					</a>
-					<a href="#colors">
-						<button
-							class="w-full cursor-pointer text-start h-11 px-4 py-2 rounded-md transition hover:text-[#6841a8] hover:bg-[#231d2e]"><i
-								class="fa-solid fa-palette"></i> Ranglar</button>
+					<button
+						class="w-full cursor-pointer text-start h-11 px-4 py-2 rounded-md transition hover:text-[#6841a8] hover:bg-[#231d2e]"><i
+							class="fa-solid fa-palette"></i> Ranglar</button>
 					</a>
 					<a href="#timer">
 						<button
@@ -140,20 +140,23 @@
 					<div
 						class="rounded-lg shadow-2xl max-w-xl lg:max-w-2xl mx-auto px-4 py-4 md:px-5 md:py-6 border border-[#3C83F6] bg-[#18181b80] backdrop-blur-sm">
 
-						<div class="flex flex-col sm:flex-row items-center gap-3">
+						<div class="flex flex-col sm:flex-row items-center gap-3 mb-6">
 							<input
-								class="flex-grow w-full rounded-md border border-[#303036] px-4 py-3 text-base text-[#a1a1aa] bg-[#18181b] focus:outline-none focus:ring-2 focus:ring-[#3C83F6]"
-								type="text" placeholder="Yangi vazifa kiriting...">
+								class="flex-grow w-full rounded-md border border-[#303036] px-4 py-3  text-base text-[#a1a1aa] bg-[#18181b] focus:outline-none focus:ring-2 focus:ring-[#3C83F6]"
+								type="text" placeholder="Yangi vazifa kiriting..." id="tasks_input">
 
 							<button
-								class="w-full sm:w-auto px-6 py-3 text-white font-semibold rounded-xl bg-gradient-to-r from-purple-600 to-blue-500 hover:from-purple-700 hover:to-blue-600 transition duration-300 shadow-lg whitespace-nowrap">
+								class="w-full sm:w-auto px-6 py-3 text-white font-semibold rounded-xl bg-gradient-to-r from-purple-600 to-blue-500 hover:from-purple-700 hover:to-blue-600 transition duration-300 shadow-lg whitespace-nowrap"
+								id="tasks_btn">
 								Qo'shish
 							</button>
 						</div>
-
-						<div class="flex justify-center py-5">
-							<p class="text-[#a1a1aa] text-sm text-center">
-								Hozircha vazifalar yo'q. Yuqoridan yangi vazifa qo'shing!
+						<div id="tasks_wrapper" class="space-y-2 ">
+						</div>
+						<div class="mt-6 pt-6 border-t border-border text-center text-muted-foreground">
+							<p>
+								Jami: <span id="total-tasks">0</span> ta vazifa |
+								Bajarilgan: <span id="completed-tasks">0</span> ta
 							</p>
 						</div>
 					</div>
@@ -208,7 +211,6 @@
 							</div>
 
 							<div class="flex items-center justify-center gap-2">
-
 								<button id="boshlash-tugmasi"
 									class="inline-flex items-center justify-center gap-2 rounded-md px-8 h-16 w-32 text-lg font-semibold bg-gradient-to-r from-purple-600 to-blue-500 text-white">
 									<i class="fa-solid fa-play"></i> Boshlash
