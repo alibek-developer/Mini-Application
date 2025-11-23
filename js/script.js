@@ -61,6 +61,8 @@ window.addEventListener('DOMContentLoaded', () => {
 	btn.addEventListener('click', addTasks)
 
 	updateStats()
+	// Random Colors
+
 	// Timer
 	const minutesElement = document.querySelector('#minutes'),
 		secondsElement = document.querySelector('#seconds'),
@@ -70,9 +72,9 @@ window.addEventListener('DOMContentLoaded', () => {
 		resetBtn = document.querySelector('#reset')
 
 	// --- Global o'zgaruvchilar ---
-	let totalMillisecond = 0 // Umumiy o'tgan millisoniya vaqtini saqlash
+	let totalMillisecond = 0
 	let intervalId
-	let isWorking = false // Taymerning joriy holati (true: ishlayapti, false: to'xtagan)
+	let isWorking = false
 
 	function updateTimer() {
 		totalMillisecond = totalMillisecond + 10
@@ -145,4 +147,151 @@ window.addEventListener('DOMContentLoaded', () => {
 		}
 		resetTimer()
 	})
+
+	// Database
+
+	class Database {
+		constructor(title, subTitle, email, number, link, parentSelektor) {
+			this.title = title
+			this.subTitle = subTitle
+			this.email = email
+			this.number = number.replace(/[^0-9+x]/g, '')
+			this.link = link.startsWith('http') ? link : 'https://' + link
+			this.parent = document.querySelector(parentSelektor)
+		}
+
+		render() {
+			const element = document.createElement('div')
+
+			element.classList.add(
+				'rounded-lg',
+				'shadow-sm',
+				'p-6',
+				'transition-all',
+				'hover:scale-105',
+				'bg-[#141418]',
+				'border',
+				'border-[#2a1f3d]'
+			)
+
+			element.innerHTML = `
+			<div class="space-y-4">
+				<div>
+					<h3 class="text-xl font-bold mb-1 text-white">${this.title}</h3>
+					<p class="text-sm text-gray-400">${this.subTitle}</p>
+				</div>
+				<div class="space-y-2 border-t border-[#a1a1aa] pt-4">
+					<div class="flex items-center gap-3 text-sm">
+						<i class="fa-solid fa-envelope text-[#7246ba]"></i>
+						<a href="mailto:${
+							this.email
+						}" class="hover:text-[#7246ba] transition-colors truncate text-gray-300">
+							${this.email}
+						</a>
+					</div>
+					<div class="flex items-center gap-3 text-sm">
+						<i class="fa-solid fa-phone text-[#346ecd]"></i>
+						<a href="tel:${
+							this.number
+						}" class="hover:text-[#346ecd] transition-colors text-gray-300">
+							${this.number}
+						</a>
+					</div>
+					<div class="flex items-center gap-3 text-sm">
+						<i class="fa-solid fa-globe text-[#cc4476]"></i>
+						<a href="${this.link}" target="_blank" rel="noopener" 
+						   class="hover:text-[#cc4476] transition-colors truncate text-gray-300">
+							${this.link.replace(/^https?:\/\//, '')}
+						</a>
+					</div>
+				</div>
+			</div>
+		`
+
+			this.parent.appendChild(element)
+		}
+	}
+
+	new Database(
+		'Ervin Xouell',
+		'Deckow-Crist',
+		'Shanna@melissa.tv',
+		'010-692-6593 x09125',
+		'anastasia.net',
+		'#database-cards'
+	).render()
+
+	new Database(
+		'Ervin Xouell',
+		'Deckow-Crist',
+		'Shanna@melissa.tv',
+		'010-692-6593 x09125',
+		'anastasia.net',
+		'#database-cards'
+	).render()
+
+	new Database(
+		'Ervin Xouell',
+		'Deckow-Crist',
+		'Shanna@melissa.tv',
+		'010-692-6593 x09125',
+		'anastasia.net',
+		'#database-cards'
+	).render()
+	new Database(
+		'Ervin Xouell',
+		'Deckow-Crist',
+		'Shanna@melissa.tv',
+		'010-692-6593 x09125',
+		'anastasia.net',
+		'#database-cards'
+	).render()
+	new Database(
+		'Ervin Xouell',
+		'Deckow-Crist',
+		'Shanna@melissa.tv',
+		'010-692-6593 x09125',
+		'anastasia.net',
+		'#database-cards'
+	).render()
+	new Database(
+		'Ervin Xouell',
+		'Deckow-Crist',
+		'Shanna@melissa.tv',
+		'010-692-6593 x09125',
+		'anastasia.net',
+		'#database-cards'
+	).render()
+	new Database(
+		'Ervin Xouell',
+		'Deckow-Crist',
+		'Shanna@melissa.tv',
+		'010-692-6593 x09125',
+		'anastasia.net',
+		'#database-cards'
+	).render()
+	new Database(
+		'Ervin Xouell',
+		'Deckow-Crist',
+		'Shanna@melissa.tv',
+		'010-692-6593 x09125',
+		'anastasia.net',
+		'#database-cards'
+	).render()
+	new Database(
+		'Ervin Xouell',
+		'Deckow-Crist',
+		'Shanna@melissa.tv',
+		'010-692-6593 x09125',
+		'anastasia.net',
+		'#database-cards'
+	).render()
+	new Database(
+		'Ervin Xouell',
+		'Deckow-Crist',
+		'Shanna@melissa.tv',
+		'010-692-6593 x09125',
+		'anastasia.net',
+		'#database-cards'
+	).render()
 })
